@@ -1,7 +1,7 @@
 let numero = 0 
 
 do{
-    numero = parseInt(prompt("Digite um número positivo: "))
+    numero = parseInt(prompt("Digite um número inteiro positivo: "))
     
 } while(numero < 0)
     
