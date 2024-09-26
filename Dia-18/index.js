@@ -23,16 +23,16 @@ class Biblioteca{
     Endereço
     Telefone
     AcervoLivros
-    constructor(Nome, Endereço, Telefone, AcervoLivros){
+    constructor(Nome, Endereço, Telefone, Array){
         this.Nome = Nome
         this.Endereço = Endereço
         this.Telefone = Telefone
-        this.AcervoLivros = []
+        this.AcervoLivros = Array
     }
 
 
     buscarLivro(Titulo){
-        livros.forEach(livro => {
+        this.AcervoLivros.forEach(livro => {
             if (livro.Titulo == Titulo){
                 console.log(livro)
             }
@@ -41,7 +41,7 @@ class Biblioteca{
 
     emprestarLivro(Titulo){
         let emprestado = false
-        livros.forEach(livro => {
+        this.AcervoLivros.forEach(livro => {
             if (livro.Titulo === Titulo){
                 if (livro.Disponibilidade === true){
                     livro.Disponibilidade = false
@@ -57,7 +57,7 @@ class Biblioteca{
     }
 
     devolverLivro(Titulo){
-        livros.forEach(livro => {
+        this.AcervoLivros.forEach(livro => {
             if (livro.Titulo == Titulo){
                 livro.Disponibilidade = true
                 console.log("Livro devolvido")
@@ -67,7 +67,7 @@ class Biblioteca{
     }
 }
 
-const biblioteca = new Biblioteca("Capa Preta", "Salvador - BA", "51 90021935")
+const biblioteca = new Biblioteca("Capa Preta", "Salvador - BA", "51 90021935", livros)
 
 biblioteca.buscarLivro("A cobra mata abraçando")
 biblioteca.emprestarLivro("O guardião")
