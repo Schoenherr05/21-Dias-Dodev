@@ -32,7 +32,7 @@ class Biblioteca{
 
 
     buscarLivro(Titulo){
-        this.AcervoLivros.forEach(livro => {
+        livros.forEach(livro => {
             if (livro.Titulo == Titulo){
                 console.log(livro)
             }
@@ -41,7 +41,7 @@ class Biblioteca{
 
     emprestarLivro(Titulo){
         let emprestado = false
-        this.AcervoLivros.forEach(livro => {
+        livros.forEach(livro => {
             if (livro.Titulo === Titulo){
                 if (livro.Disponibilidade === true){
                     livro.Disponibilidade = false
